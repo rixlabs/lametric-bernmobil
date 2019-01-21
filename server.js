@@ -11,18 +11,20 @@ const stationBoardAPI = 'http://transport.opendata.ch/v1/stationboard?limit=4&ty
 
 
 app.use('/station', function(req, res, next) {
-    axios.get(stationBoardAPI+req.query.stationId)
+    const nowPlusOneM = moment().add(2, 'm').format('YYYY-MM-DD k:mm');
+    
+    axios.get(stationBoardAPI+req.query.stationId+'&datetime='+nowPlusOneM)
       .then(function (response) {
 
         const connections = response.data.stationboard.map((c, index) => {
             return {
-                text: c.to+' '+moment(c.stop.departure).fromNow(),
-                icon: null,
-                index: index+1
+                text: c.to.replace(/Bern,?/g, '')+' '+moment(c.stop.departure).fromNow(),
+                icon: 'i3525',
+                index: index
                 
             }
           })
-          connections.unshift({text: 'BUS', icon: 'i3525', index: 0});
+          //connections.unshift({text: 'BUS', icon: 'i3525', index: 0});
           const frame = {
               frames: connections
           }
