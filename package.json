@@ -1,0 +1,29 @@
+{
+  "name": "lametric-bernmobil",
+  "version": "0.5.0",
+  "description": "Bern Mobil integration for LaMetric",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rixlabs/lametric-bernmobil.git"
+  },
+  "keywords": [
+    "lametric",
+    "bern",
+    "mobil",
+    "departure",
+    "time"
+  ],
+  "author": "Riccardo Causo <rixlabs@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rixlabs/lametric-bernmobil/issues"
+  },
+  "homepage": "https://github.com/rixlabs/lametric-bernmobil#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
